@@ -1,0 +1,65 @@
+Ejecutar la(s) consulta(s) SQL en la tabla examen.categorias: Documentación
+1
+drop DATABASE examen;
+2
+CREATE DATABASE examen;
+3
+​
+4
+CREATE table clientes(
+5
+    id_cliente int AUTO_INCREMENT,
+6
+    nombre varchar(20),
+7
+    direccion varchar(30),
+8
+    telefono varchar(20),
+9
+    PRIMARY key (id_cliente)
+10
+);
+11
+create table proveedores(
+12
+    id_proveedor int AUTO_INCREMENT,
+13
+    nombre varchar(20),
+14
+    direcion varchar(20),
+15
+    telefono varchar(20),
+16
+    
+17
+    PRIMARY key(id_proveedor)
+18
+);
+19
+create table productos(
+20
+    id_producto int AUTO_INCREMENT,
+21
+    id_categoria int,
+22
+    id_proveedor int,
+23
+    precio double,
+24
+    descripcion varchar(20),
+25
+    PRIMARY key(id_producto),
+26
+    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria),
+27
+    FOREIGN KEY (id_proveedor) REFERENCES proveedores(id_proveedor)
+28
+    
+29
+);
+30
+​
+31
+​
+32
+​
