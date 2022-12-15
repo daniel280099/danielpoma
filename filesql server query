@@ -1,0 +1,27 @@
+create schema ventas;
+create schema RRHH;
+
+
+
+use empresa
+alter schema ventas transfer dbo.Clientes
+alter schema RRHH transfer dbo.Empleados
+
+select * from ventas.clientes
+
+
+
+create table Clientes(
+ClienteCodigo nchar(10),
+ClienteNombre varchar(30),
+constraint ClientePK primary key (ClienteCodigo)
+
+)
+CREATE TABLE Empleados(
+EmpleadoCodigo nchar(10),
+EmpleadoNombre varchar(30),
+constraint EmpleadoPK primary key (EmpleadoCodigo)
+)
+
+-- consultando esquema y su resctivas tablas
+select * from RRHH.empleados
